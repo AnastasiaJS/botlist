@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Botlist-An App Store for Bots</title>
+    <link rel="stylesheet" href="../css/login.css"/>
+</head>
+<script>
+    function Login(){
+        var id=document.getElementById('user_id').value;
+        var pass=document.getElementById('pass_w').value;
+        var local_id=localStorage.getItem('id');
+        var local_pass=localStorage.getItem('password');
+        if(id==''||pass==''){
+//            alert('请输入用户名或密码');
+            document.getElementById('error_id').style.display='block';
+            document.getElementById('error_id').innerHTML='The email field is required.';
+            document.getElementById('error_pass').style.display='block';
+            document.getElementById('error_pass').innerHTML='The password field is required.';
+        }
+        else{
+            if(id==local_id && pass==local_pass){
+                alert('登录成功！');
+                sessionStorage.setItem('isLogin',true);
+                location.href='../index.html';
+            }
+            else{
+                alert('用户名或密码输入错误');
+            }
+        }
+    }
+</script>
+<body>
+<header>
+    <div class="top">
+        <div class="top_up">
+            <div class="top_nav_left">
+                <div class="top_nav_list">
+                    <ul>
+                        <li><a href="../index.html"><img src="../image/logo.png" alt=""/></a></li>
+                        <li>Articles</li>
+                        <li>Create a Bot</li>
+                        <li>Submit a Bot</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="top_nav_right">
+                <ul class="top_nav_rlist">
+                    <li><input type="text" id="text_search" placeholder="SEARCH"/></li>
+                    <li>Browse</li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <div id="div_frm">
+        <div id="frm_head">
+            Login
+        </div>
+        <div id="frm_content">
+            <form action="">
+                <table>
+                    <tr>
+                        <td><b>E-Mail Address</b></td>
+                        <td><input type="text" id="user_id"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span class="error" id="error_id"></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Password</b></td>
+                        <td><input type="text" id="pass_w"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span class="error" id="error_pass"></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span><input type='checkbox'/>Remember Me</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="Login" id="btn_login" onclick="Login()"/><a href="">Forget Your Password?</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+</section>
+<footer>
+    <div id="foot_title">As Seen On</div>
+    <div id="foot_center">
+        <div><img src="../image/techcrunch.svg" alt="" width="100%"/></div>
+        <div><img src="../image/tnw.svg" alt="" width="100%"/></div>
+        <div><img src="../image/digital-trends.svg" alt="" width="100%"/></div>
+        <div><img src="../image/engadget.svg" alt="" width="100%"/></div>
+    </div>
+    <div id="foot_bottom">
+        <div id="foot_message1">
+            © BotList 2016, A Marketing Stack Ltd Company
+        </div>
+        <div id="foot_message2">
+            Built by: @bentossell, @sethlouey, @mubashariqbal
+        </div>
+    </div>
+</footer>
+</body>
+</html>

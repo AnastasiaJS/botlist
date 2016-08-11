@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Botlist-An App Store for Bots</title>
+    <link rel="stylesheet" href="../css/register.css"/>
+    <script>
+
+        function toRegister(){
+
+            var id=document.getElementById('user_id').value;
+            var name=document.getElementById('user_name').value;
+            var pass=document.getElementById('pass_w').value;
+            var pass_aga=document.getElementById('pass_again').value;
+            if(id==''||name==''||pass==''||pass_aga==''){
+
+//                alert('信息不能为空！');
+//                document.getElementsByClassName('error').style.display='block';
+
+                if(id==''){
+                    document.getElementById('error_id').style.display='block';
+                    document.getElementById('error_id').innerHTML='The name field is required.';
+                }
+                if(name==''){
+                    document.getElementById('error_name').style.display='block';
+                    document.getElementById('error_name').innerHTML='The email field is required.';
+
+                }
+                if(pass==''){
+                    document.getElementById('error_pass').style.display='block';
+                    document.getElementById('error_pass').innerHTML='The password field is required.';
+
+                }
+                if(pass_aga==''){
+                    document.getElementById('error_pass_aga').style.display='block';
+                    document.getElementById('error_pass_aga').innerHTML='The password confirmation does not match.';
+                }
+            }
+            else{
+                var old_id=localStorage.getItem('id');
+                if(old_id==id){
+//                    alert('该邮箱已注册');
+                    document.getElementById('error_id').style.display='block';
+                    document.getElementById('error_id').innerHTML='The name field is required.';
+                }
+                else{
+                    if(pass==pass_aga){
+                        alert('注册成功！');
+                        location.href='login.html';
+                        localStorage.setItem('id',id);
+                        localStorage.setItem('name',name);
+                        localStorage.setItem('password',pass);
+                    }
+                    else{
+//                        alert('两次输入密码不同！');
+
+                        document.getElementById('error_pass').style.display='block';
+                        document.getElementById('error_pass').innerHTML='The password confirmation does not match.';
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <div class="top">
+        <div class="top_up">
+            <div class="top_nav_left">
+                <div class="top_nav_list">
+                    <ul>
+                        <li><a href="../index.html"><img src="../image/logo.png" alt=""/></a></li>
+                        <li>Articles</li>
+                        <li>Create a Bot</li>
+                        <li>Submit a Bot</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="top_nav_right">
+                <ul class="top_nav_rlist">
+                    <li><input type="text" id="text_search" placeholder="SEARCH"/></li>
+                    <li>Browse</li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <div id="div_frm">
+        <div id="frm_head">
+            Register
+        </div>
+        <div id="frm_content">
+            <form action="">
+                <table>
+                    <tr>
+                        <td><b>Name</b></td>
+                        <td><input type="text" id="user_name" class="text_input" value="" placeholder=""/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td ><span id="error_name" class="error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>E-Mail Address</b></td>
+                        <td><input type="text" id="user_id" class="text_input" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span id="error_id" class="error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Password</b></td>
+                        <td><input type="text" id="pass_w" class="text_input" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span id="error_pass" class="error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Confirm Password</b></td>
+                        <td><input type="text" id="pass_again" class="text_input" value=""/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span id="error_pass_aga" class="error"></span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Subscribe to Newsletter</b></td>
+                        <td><span><input type='checkbox' id="check_box"/></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" value="Register" id="btn_login" onclick="toRegister()"/></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+</section>
+<footer>
+    <div id="foot_title">As Seen On</div>
+    <div id="foot_center">
+        <div><img src="../image/techcrunch.svg" alt="" width="100%"/></div>
+        <div><img src="../image/tnw.svg" alt="" width="100%"/></div>
+        <div><img src="../image/digital-trends.svg" alt="" width="100%"/></div>
+        <div><img src="../image/engadget.svg" alt="" width="100%"/></div>
+    </div>
+    <div id="foot_bottom">
+        <div id="foot_message1">
+            © BotList 2016, A Marketing Stack Ltd Company
+        </div>
+        <div id="foot_message2">
+            Built by: @bentossell, @sethlouey, @mubashariqbal
+        </div>
+    </div>
+</footer>
+</body>
+</html>

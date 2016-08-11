@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Botlist-An App Store for Bots</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script>
+            window.onload=function(){
+                if(sessionStorage.getItem('isLogin')=='true'){
+                    document.getElementById('welcome').style.display='inline-block';
+                    document.getElementById('logout').style.display='inline-block';
+                    document.getElementById('a_login').style.display='none';
+                    document.getElementById('a_register').style.display='none';
+                    var user_id=localStorage.getItem('id');
+                    document.getElementById('text_id').value=user_id;
+                }
+                else{
+
+                    document.getElementById('welcome').style.display='none';
+                    document.getElementById('logout').style.display='none';
+                    document.getElementById('a_login').style.display='inline-block';
+                    document.getElementById('a_register').style.display='inline-block';
+                }
+            }
+        function logout(){
+            sessionStorage.setItem('isLogin',false);
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+<header>
+    <div class="top">
+        <div class="top_up">
+            <div class="top_nav_left">
+                <div class="top_nav_list">
+                    <ul>
+                        <li> <img src="image/logo.png" alt=""/></li>
+                        <li>Articles</li>
+                        <li>Create a Bot</li>
+                        <li>Submit a Bot</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="top_nav_right">
+                <ul class="top_nav_rlist">
+                    <li>Browse</li>
+                    <li id="a_login"><a href="html/login.html">Login</a></li>
+                    <li id="a_register"><a href="html/register.html">Register</a></li>
+                    <li id="welcome">欢迎-<input type="text" id="text_id" value=""/></li>
+                    <li id="logout"><input type="button" value="退出登录" onclick="logout()"/></li>
+                </ul>
+            </div>
+        </div>
+        <div id="top_title">
+            An App Store For Bots
+        </div>
+        <div id="top_pic">
+            <img src="image/top.png" alt=""/>
+        </div>
+        <div id="top_search">
+            <input type="text" id="text_search" placeholder="There aren't the driods we are looking for"/>
+            <input type="button" value="SEARCH" id="btn_search"/>
+        </div>
+    </div>
+</header>
+<section>
+ <div class="container">
+    <div class="con_left">
+        <ul>
+            <li id="list_1">PLATFORMS</li>
+            <li>Android</li>
+            <li>Email</li>
+            <li>Facebook Messenger</li>
+            <li>iPhone</li>
+            <li>Kik</li>
+            <li>Slack</li>
+            <li>SMS</li>
+            <li>Telegram</li>
+            <li id="list_2">CATEGORIES</li>
+            <li>Build A Bot</li>
+            <li>Analytics</li>
+            <li>Communication</li>
+            <li>Customer Support</li>
+            <li>Design</li>
+            <li>Developer Tools</li>
+            <li>Entertainment</li>
+            <li>File Management</li>
+            <li>Health</li>
+            <li>HR</li>
+            <li>Marketing</li>
+            <li>News</li>
+            <li>Office Management</li>
+            <li>Payments</li>
+            <li>Personal</li>
+            <li>Productivity</li>
+            <li>Security</li>
+            <li>Social & Fun</li>
+            <li>Sports</li>
+            <li>Task Management</li>
+            <li>Travel</li>
+            <li>Utilities</li>
+        </ul>
+    </div>
+    <div class="con_right">
+        <div id="right1">
+            <div id="right_title1">FEATURED BOTS</div>
+            <!--<div>-->
+                <!--<hr/>-->
+            <!--</div>-->
+            <div class="main">
+                <div id="right_pic1" class="main_con">
+                    <div id="pic1_1">
+                        <img src="image/digg.jpg" alt=""/>
+                    </div>
+                    <div id="p1_1">
+                        <h2>Digg</h2>
+                        <p>News</p>
+                        <p>
+                            <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                        </p>
+                    </div>
+                </div>
+                <div id="right_pic2" class="main_con">
+                    <div id="pic2_1">
+                        <img src="image/nba.jpg" alt=""/>
+                    </div>
+                    <div id="p2_1">
+                        <h2>NBA</h2>
+                        <p>Personal</p>
+                        <p>
+                            <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="right_pic3" class="main_con">
+                    <div id="pic3_1">
+                        <img src="image/And%20Chill.jpg" alt=""/>
+                    </div>
+                    <div id="p3_1">
+                        <h2>And Chill</h2>
+                        <p>Personal +1</p>
+                        <p id="have_2pic">
+                            <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                            <!--<img src="image/sms-icon.svg" width="5%" alt=""/>-->
+
+                        </p>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="main">
+                <div id="right_pic4" class="main_con">
+                    <!--<div>-->
+                        <div id="pic4_1">
+                            <img src="image/CHatfuel.png" alt=""/>
+                        </div>
+                        <div id="p4_1">
+                            <h2>Chatfuel</h2>
+                            <p>Build A Bot</p>
+                            <p>
+                                <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                            </p>
+                        </div>
+                    <!--</div>-->
+                </div>
+                <div id="right_pic5" class="main_con">
+                    <div id="pic5_1">
+                        <img src="image/smooth%20for%20message.png" alt=""/>
+                    </div>
+                    <div id="p5_1">
+                        <h2>Smooch for Messenger</h2>
+                        <p>Personal</p>
+                        <p>
+                            <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="right_pic6" class="main_con">
+                    <div id="pic6_1">
+                        <img src="image/messenger%20platfrom.png" alt=""/>
+                    </div>
+                    <div id="p6_1">
+                        <h2>Messenger Platform</h2>
+                        <p>Build A Bot</p>
+                        <p>
+                            <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                            <!--<img src="image/sms-icon.svg" width="10%" alt=""/>-->
+
+                        </p>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="right2">
+            <div id="right_title2">NEW BOTS</div>
+            <!--<div>-->
+            <!--<hr/>-->
+            <!--</div>-->
+            <div class="main">
+                <div id="right2_pic1" class="main_con">
+                    <div id="pic21_1">
+                        <img src="image/snapbot.png" alt=""/>
+                    </div>
+                    <div id="p21_1">
+                        <h2>SnapBot</h2>
+                        <p>Design</p>
+                        <p>
+                            <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                        </p>
+                    </div>
+                </div>
+                <div id="right2_pic2" class="main_con">
+                    <div id="pic22_1">
+                        <img src="image/webhr.png" alt=""/>
+                    </div>
+                    <div id="p22_1">
+                        <h2>WebHR</h2>
+                        <p>HR</p>
+                        <p>
+                            <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="right2_pic3" class="main_con">
+                    <div id="pic23_1">
+                        <img src="image/foxsy.png" alt=""/>
+                    </div>
+                    <div id="p23_1">
+                        <h2>Foxsy</h2>
+                        <p>Social & Fun</p>
+                        <p>
+                            <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                            <!--<img src="image/sms-icon.svg" width="5%" alt=""/>-->
+
+                        </p>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="main">
+                <div id="right2_pic4" class="main_con">
+                    <!--<div>-->
+                    <div id="pic24_1">
+                        <img src="image/kikie.png" alt=""/>
+                    </div>
+                    <div id="p24_1">
+                        <h2>Kukie</h2>
+                        <p>Productivity</p>
+                        <p>
+                            <img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>
+                        </p>
+                    </div>
+                    <!--</div>-->
+                </div>
+                <div id="right2_pic5" class="main_con">
+                    <div id="pic25_1">
+                        <img src="image/glance.png" alt=""/>
+                    </div>
+                    <div id="p25_1">
+                        <h2>Glance</h2>
+                        <p>Analytics +1</p>
+                        <p>
+                            <img src="image/slack-icon.svg" width="10%" alt=""/>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="right2_pic6" class="main_con">
+                    <div id="pic26_1">
+                        <img src="image/abacus.jpg" alt=""/>
+                    </div>
+                    <div id="p26_1">
+                        <h2>Abacus</h2>
+                        <p>Office Management</p>
+                        <p>
+                            <img src="image/slack-icon.svg" width="10%" alt=""/>
+                            <!--<img src="image/sms-icon.svg" width="10%" alt=""/>-->
+
+                        </p>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="right3">
+            <div id="right_title3">UPCOMING</div>
+            <!--<div>-->
+            <!--<hr/>-->
+            <!--</div>-->
+            <div class="main">
+                <div id="right3_pic1" class="main_con">
+                    <div id="pic31_1">
+                        <img src="image/troops.png" alt=""/>
+                    </div>
+                    <div id="p31_1">
+                        <h2>Troops</h2>
+                        <p>Analytics +2</p>
+                        <p>
+                            <img src="image/slack-icon.svg" width="10%" alt=""/>
+                        </p>
+                    </div>
+                </div>
+                <div id="right3_pic2" class="main_con">
+                    <div id="pic32_1">
+                        <img src="image/Baxter.png" alt=""/>
+                    </div>
+                    <div id="p32_1">
+                        <h2>Baxter</h2>
+                        <p>Productivity +1</p>
+                        <p>
+                            <img src="image/slack-icon.svg" width="10%" alt=""/>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="right3_pic3" class="main_con">
+                    <div id="pic33_1">
+                        <img src="image/cache.png" alt=""/>
+                    </div>
+                    <div id="p33_1">
+                        <h2>Cache</h2>
+                        <p>Personal +1</p>
+                        <p>
+                            <!--<img src="image/messenger-icon%20(1).svg" width="10%" alt=""/>-->
+                            <img src="image/sms-icon.svg" width="10%" alt=""/>
+
+                        </p>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<footer>
+    <div id="foot_title">As Seen On</div>
+    <div id="foot_center">
+        <div><img src="image/techcrunch.svg" alt="" width="100%"/></div>
+        <div><img src="image/tnw.svg" alt="" width="100%"/></div>
+        <div><img src="image/digital-trends.svg" alt="" width="100%"/></div>
+        <div><img src="image/engadget.svg" alt="" width="100%"/></div>
+    </div>
+    <div id="foot_bottom">
+        <div id="foot_message1">
+            © BotList 2016, A Marketing Stack Ltd Company
+        </div>
+        <div id="foot_message2">
+            Built by: @bentossell, @sethlouey, @mubashariqbal
+        </div>
+    </div>
+</footer>
+</body>
+</html>
